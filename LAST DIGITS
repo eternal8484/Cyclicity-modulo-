@@ -1,0 +1,31 @@
+# Get inputs for base and exponent
+base = int(input("Enter base: "))
+exp = int(input("Enter exponent: "))
+find = input("What do you want to find? (last digit, last two digits, last three digits)\n")
+
+# Functions for finding last digits using modular exponentiation
+if find == 'last digit':
+    def last_digit():
+        remainder = pow(base, exp, 10)  # Calculate base^exp % 10
+        print(f'{base}^{exp} ≡ {remainder} mod(10)')
+        return remainder
+    result = last_digit()
+    print(result)
+
+elif find == 'last two digits':
+    def last_two_digits():
+        remainder = pow(base, exp, 100)  # Calculate base^exp % 100
+        print(f'{base}^{exp} ≡ {remainder} mod(100)')
+        return remainder
+    result = last_two_digits()
+    print(result)
+
+elif find == 'last three digits':
+    def last_three_digits():
+        remainder = pow(base, exp, 1000)  # Calculate base^exp % 1000
+        print(f'{base}^{exp} ≡ {remainder} mod(1000)')
+        return remainder
+    result = last_three_digits()
+    print(result)
+else:
+    print("Invalid option. Please choose 'last digit', 'last two digits', or 'last three digits'.")
